@@ -830,9 +830,6 @@ SoftOMXComponent* SoftFFmpegVideo::createSoftOMXComponent(
         const char *name, const OMX_CALLBACKTYPE *callbacks,
         OMX_PTR appData, OMX_COMPONENTTYPE **component) {
 
-    if (!property_get_bool("media.sf.hwaccel", 1))
-        return NULL;
-
     OMX_VIDEO_CODINGTYPE codingType = OMX_VIDEO_CodingAutoDetect;
     const char *componentRole = NULL;
     enum AVCodecID codecID = AV_CODEC_ID_NONE;
